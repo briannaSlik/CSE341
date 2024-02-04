@@ -1,5 +1,5 @@
 const rileyRoute = (req, res) => {
-    res.send("Riley");
+    res.send("Riley Slik");
 }
 
 const dogRoute = (req, res) => {

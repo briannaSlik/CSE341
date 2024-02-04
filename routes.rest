@@ -1,0 +1,28 @@
+### 
+GET https://cse341-bsu8.onrender.com/contacts
+
+### 
+GET https://cse341-bsu8.onrender.com/contacts/65bc96911875d26e4eabecf8
+
+###
+POST https://cse341-bsu8.onrender.com/contacts/ 
+{
+    "firstName": "Harley",
+    "lastName": "Marsh",
+    "email": "isadog@gmail.com",
+    "birthday": "6/16/2018",
+    "favoriteColor": "white"
+}
+
+###
+PUT https://cse341-bsu8.onrender.com/contacts/65bc96911875d26e4eabecf8
+{
+    "firstName": "Student",
+    "lastName": "Slik",
+    "email": "mar18016@byui.edu",
+    "birthday": "12/09/1999",
+    "favoriteColor": "red"
+}
+
+###
+DELETE https://cse341-bsu8.onrender.com/contacts/65bf2b471d7029e0131709e9

@@ -1,39 +1,6 @@
 const Contact = require('../model/contactModel')
 
-// let bri = {
-//     firstName: "BriAnna",
-//     lastName: "Slik",
-//     email: "mar18016@byui.edu",
-//     birthday: "12/09/1999",
-//     favoriteColor: "red"
-// }
-
-// let riley = {
-//     firstName: "Riley",
-//     lastName: "Slik",
-//     email: "2018Riley@gmail.com",
-//     birthday: "2/11/2000",
-//     favoriteColor: "purple"
-// }
-
-let harley = {
-    firstName: "Harley",
-    lastName: "Marsh",
-    email: "isadog@gmail.com",
-    birthday: "6/16/2018",
-    favoriteColor: "white"
-}
-
-const getContacts = async (req, res) => {
-    try {
-        const contacts = await Contact.find()
-        res.json(contacts)
-    } catch (err) {
-        res.status(500).json({ message: err.message })
-    }
-}
-
-// Finds the contact by its id, will be used to read, update, and delete
+// Middle man function for getting contact by id, updated by id, and deleting by id
 const findContactById = async (req, res, next) => {
     let contact
     try {
@@ -49,12 +16,21 @@ const findContactById = async (req, res, next) => {
     next()
 }
 
+const getContacts = async (req, res) => {
+    try {
+        const contacts = await Contact.find()
+        res.json(contacts)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+}
+
 const getContactById = (req, res) => {
     res.json(res.contact)
 }
 
 const createContact = async (req, res) => {
-    const contact = new Contact(harley)
+    const contact = new Contact(req.body)
 
     try {
         const newContact = await contact.save()

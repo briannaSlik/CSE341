@@ -34,7 +34,7 @@ const createContact = async (req, res) => {
 
     try {
         const newContact = await contact.save()
-        res.status(201).json(newContact.id)
+        res.status(201).json({ message: "Contact was successfully created"})
     } catch (err) {
         res.status(500).json({ message: err.message })
     }

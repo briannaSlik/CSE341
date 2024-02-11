@@ -1,7 +1,6 @@
 const routes = require('express').Router()
-const personalAssignment1Controller = require('../controllers/personalassignment1.js')
 
-routes.get('/', personalAssignment1Controller.rileyRoute)
-routes.get('/dog', personalAssignment1Controller.dogRoute)
+routes.use('/', require('./swagger'));
+routes.use('/contacts', require('./contacts'));
 
 module.exports = routes;

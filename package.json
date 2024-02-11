@@ -6,17 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "gitUpdate": "git add . && git commit -m \"update\" && git push"
+    "gitUpdate": "git add . && git commit -m \"update\" && git push",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^8.1.1"
+    "mongoose": "^8.1.1",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "dotenv": "^16.4.1",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "swagger-autogen": "^2.23.7"
   }
 }

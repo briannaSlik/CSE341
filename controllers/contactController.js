@@ -30,10 +30,16 @@ const getContactById = (req, res) => {
 }
 
 const createContact = async (req, res) => {
-    const contact = new Contact(req.body)
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        birthday: req.body.birthday,
+        favoriteColor: req.body.favoriteColor
+    }
 
     try {
-        const newContact = await contact.save()
+        await contact.save()
         res.status(201).json({ message: "Contact was successfully created"})
     } catch (err) {
         res.status(500).json({ message: err.message })
